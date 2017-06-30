@@ -74,8 +74,11 @@ TAG;
 
 
 foreach ($chars as $tinyint => $description) {
-    $line = sprintf('    const %s = "\u{%s}";', str_pad(str_slug($description, '_'), $maxlen, ' ', STR_PAD_RIGHT), str_pad($tinyint, 3, '0', STR_PAD_LEFT));
+    $unicode = str_pad(dechex($tinyint), 4, '0', STR_PAD_LEFT); // 00AC
+    $line = sprintf('    const %s = "\u{%s}"; // %s', str_pad(str_slug($description, '_'), $maxlen, ' ', STR_PAD_RIGHT), $unicode, utf8_encode(chr($tinyint)));
     $content .= $line.PHP_EOL;
 }
 
 file_put_contents('src/Ascii.php', $header.$content.$footer);
+
+dump($confirmation = \Quezler\AsciiExtended\Ascii::not_sign);
