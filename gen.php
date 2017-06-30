@@ -59,7 +59,7 @@ TAG;
 
 
 foreach ($chars as $tinyint => $description) {
-    $line = sprintf('    const %s = \'%s\'; // %d', str_pad(str_slug($description), $maxlen, ' ', STR_PAD_RIGHT), chr($tinyint), $tinyint);
+    $line = sprintf('    const %s = "\u{%s}";', str_pad(str_slug($description, '_'), $maxlen, ' ', STR_PAD_RIGHT), str_pad($tinyint, 3, '0', STR_PAD_LEFT));
     $content .= $line.PHP_EOL;
 }
 

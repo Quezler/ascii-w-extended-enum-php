@@ -9,7 +9,9 @@
             "email": "Quezler@me.com"
         }
     ],
-    "require": {},
+    "require": {
+        "php": ">=7.0.0"
+    },
     "require-dev": {
         "guzzlehttp/guzzle": "^6.3",
         "symfony/dom-crawler": "^3.3",
