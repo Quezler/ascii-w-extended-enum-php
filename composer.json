@@ -1,0 +1,28 @@
+{
+    "name": "quezler/ascii-w-extended-enum-php",
+    "description": "All ascii chars producable with php's chr() function organized as class constants.",
+    "type": "enum",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Patrick 'Quezler' Mounier",
+            "email": "Quezler@me.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.0"
+    },
+    "require-dev": {
+        "guzzlehttp/guzzle": "^6.3",
+        "symfony/dom-crawler": "^3.3",
+        "symfony/var-dumper": "^3.3",
+        "symfony/css-selector": "^3.3",
+        "laravel/framework": "^5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Quezler\\AsciiExtended\\": "src/"
+        }
+    }
+
+}
