@@ -93,6 +93,15 @@ foreach ($chars as $tinyint => $description) {
         case 45: // Hyphen-minus (readability)
             $content .=  formatConst('minus', 'self::hyphen', $maxlen) . PHP_EOL;
             break;
+        case 95: // Low line (readability)
+            $content .=  formatConst('underscore', 'self::low_line', $maxlen) . PHP_EOL;
+            break;
+        case 47: // Slash (Solidus) (readability)
+            $content .=  formatConst('Slash', 'self::slash_solidus', $maxlen) . PHP_EOL;
+            break;
+        case 172: // Not sign (readability)
+            $content .=  formatConst('Not', 'self::not_sign', $maxlen) . PHP_EOL;
+            break;
     }
 }
 
