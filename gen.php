@@ -43,6 +43,9 @@ $crawler->filter('tr')->each(function (\Symfony\Component\DomCrawler\Crawler $no
                             case 35: // Number sign, Hashtag, Octothorpe, Sharp (readability)
                                 $description = 'Number sign';
                                 break;
+                            case 45: // Hyphen-minus (readability)
+                                $description = 'Hyphen';
+                                break;
                         }
 
                         $chars[$decimal] = $description;
@@ -86,6 +89,9 @@ foreach ($chars as $tinyint => $description) {
             $content .=  formatConst('hashtag', 'self::number_sign', $maxlen) . PHP_EOL;
             $content .=  formatConst('Octothorpe', 'self::number_sign', $maxlen) . PHP_EOL;
             $content .=  formatConst('Sharp', 'self::number_sign', $maxlen) . PHP_EOL;
+            break;
+        case 45: // Hyphen-minus (readability)
+            $content .=  formatConst('minus', 'self::hyphen', $maxlen) . PHP_EOL;
             break;
     }
 }
