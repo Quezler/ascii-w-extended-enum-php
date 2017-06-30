@@ -41,7 +41,7 @@ $crawler->filter('tr')->each(function (\Symfony\Component\DomCrawler\Crawler $no
                                 $description = 'CCH';
                                 break;
                             case 35: // Number sign, Hashtag, Octothorpe, Sharp (readability)
-                                $description = 'Hashtag';
+                                $description = 'Number sign';
                                 break;
                         }
 
@@ -80,10 +80,20 @@ foreach ($chars as $tinyint => $description) {
 
     switch ($tinyint) {
         case 48: // Full stop
-            $content .= sprintf('    const %s = self::full_stop;', str_pad(str_slug('Period', '_'), $maxlen, ' ', STR_PAD_RIGHT)) . PHP_EOL;
+            $content .=  formatConst('period', 'self::full_stop', $maxlen) . PHP_EOL;
+            break;
+        case 35: // Number sign, Hashtag, Octothorpe, Sharp
+            $content .=  formatConst('hashtag', 'self::number_sign', $maxlen) . PHP_EOL;
+            $content .=  formatConst('Octothorpe', 'self::number_sign', $maxlen) . PHP_EOL;
+            $content .=  formatConst('Sharp', 'self::number_sign', $maxlen) . PHP_EOL;
+            break;
     }
 }
 
 file_put_contents('src/Ascii.php', $header.$content.$footer);
 
 dump($confirmation = \Quezler\AsciiExtended\Ascii::not_sign);
+
+function formatConst($name, $value, $padding) {
+    return sprintf('    const %s = %s;', str_pad(str_slug($name, '_'), $padding, ' ', STR_PAD_RIGHT), $value);
+}
