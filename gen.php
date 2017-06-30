@@ -75,7 +75,7 @@ TAG;
 
 foreach ($chars as $tinyint => $description) {
     $unicode = str_pad(dechex($tinyint), 4, '0', STR_PAD_LEFT); // 00AC
-    $line = sprintf('    const %s = "\u{%s}"; // %s', str_pad(str_slug($description, '_'), $maxlen, ' ', STR_PAD_RIGHT), $unicode, utf8_encode(chr($tinyint)));
+    $line = sprintf('    const %s = "%s"; // %s', str_pad(str_slug($description, '_'), $maxlen, ' ', STR_PAD_RIGHT), addslashes(utf8_encode(chr($tinyint))), "\u{$unicode}");
     $content .= $line.PHP_EOL;
 
     switch ($tinyint) {
