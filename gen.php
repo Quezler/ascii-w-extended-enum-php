@@ -30,7 +30,22 @@ $crawler->filter('tr')->each(function (\Symfony\Component\DomCrawler\Crawler $no
 
                     // check if number is in the range we intend to use
                     if ($decimal >= 0 && $decimal <= 255) {
-                        $chars[$decimal] = $description = $tds->eq($tds->count() -2)->text();
+                        $description = $tds->eq($tds->count() -2)->text();
+
+                        // overrides
+                        switch ($decimal) {
+                            case 24: // Cancel character (collision)
+                                $description = 'CAN';
+                                break;
+                            case 148: // Cancel character (collision)
+                                $description = 'CCH';
+                                break;
+                            case 35: // Number sign, Hashtag, Octothorpe, Sharp (readability)
+                                $description = 'Hashtag';
+                                break;
+                        }
+
+                        $chars[$decimal] = $description;
                     }
                 }
             }

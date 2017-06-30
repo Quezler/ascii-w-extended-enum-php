@@ -27,7 +27,7 @@ class Ascii {
     const negative_acknowledge_character             = "\u{021}";
     const synchronous_idle                           = "\u{022}";
     const end_of_transmission_block                  = "\u{023}";
-    const cancel_character                           = "\u{024}";
+    const can                                        = "\u{024}";
     const end_of_medium                              = "\u{025}";
     const substitute_character                       = "\u{026}";
     const escape_character                           = "\u{027}";
@@ -57,7 +57,7 @@ class Ascii {
     const private_use_1                              = "\u{145}";
     const private_use_2                              = "\u{146}";
     const set_transmit_state                         = "\u{147}";
-    const cancel_character                           = "\u{148}";
+    const cch                                        = "\u{148}";
     const message_waiting                            = "\u{149}";
     const start_of_protected_area                    = "\u{150}";
     const end_of_protected_area                      = "\u{151}";
@@ -71,7 +71,7 @@ class Ascii {
     const application_program_command                = "\u{159}";
     const exclamation_mark                           = "\u{033}";
     const quotation_mark                             = "\u{034}";
-    const number_sign_hashtag_octothorpe_sharp       = "\u{035}";
+    const hashtag                                    = "\u{035}";
     const dollar_sign                                = "\u{036}";
     const percent_sign                               = "\u{037}";
     const ampersand                                  = "\u{038}";
