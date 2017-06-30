@@ -1,0 +1,13 @@
+{
+    "name": "quezler/ascii-w-extended-enum-php",
+    "description": "All ascii chars producable with php's chr() function organized as class constants.",
+    "type": "enum",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Patrick 'Quezler' Mounier",
+            "email": "Quezler@me.com"
+        }
+    ],
+    "require": {}
+}
